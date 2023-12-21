@@ -5,6 +5,6 @@
 
   tasks:  
     - name: checking splunk status
-      ansible.builtin.systemd_service:
+      ansible.builtin.systemd:
         state: started
         name: Splunkd
