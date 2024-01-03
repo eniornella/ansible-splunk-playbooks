@@ -1,6 +1,6 @@
 - name: Copy indexers configuration to etc/apps
   ansible.builtin.copy:
-    src: /home/ansible/ansible-splunk-playbooks/indexers/idx_cluster_addon
+    src: /ansible-splunk-playbooks/indexers/idx_cluster_addon
     dest: /opt/splunk/etc/apps
     owner: splunk_user
     group: splunk_user
