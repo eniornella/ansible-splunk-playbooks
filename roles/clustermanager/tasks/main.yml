@@ -1,17 +1,14 @@
----
-- name: clustermanager configuration 
-  hosts: clustermanager
-  become: true
+- name: copy clustermanager configuration addon to etc/apps
+  ansible.builtin.copy:
+    src: /home/ansible/ansible-splunk-playbooks/clustermanager/cluster_addon
+    dest: /opt/splunk/etc/apps
+    owner: splunk_user
+    group: splunk_user
+    mode: "0644"
+  when: inventory_hostname == groups['clustermanager'][0]
 
-  tasks:  
-    - name: copy clustermanager configuration addon to etc/apps
-      ansible.builtin.copy:
-        src: /home/ansible/ansible-splunk-playbooks/clustermanager/cluster_addon
-        dest: /opt/splunk/etc/apps
-        owner: splunk_user
-        group: splunk_user
-        mode: '0644'
-    - name:  splunk restart
-      ansible.builtin.systemd:
-        state: restarted
-        name: Splunkd
+- name: splunk restart
+  ansible.builtin.systemd:
+    state: restarted
+    name: Splunkd
+  when: inventory_hostname == groups['clustermanager'][0]
