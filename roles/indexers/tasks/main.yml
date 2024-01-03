@@ -5,7 +5,7 @@
     owner: splunk_user
     group: splunk_user
     mode: "0644"
-    when: inventory_hostname in groups['indexers'][0:3]
+  when: inventory_hostname in groups['indexers'][0:3]
 
 - name: Splunk Restart
   shell: sudo systemctl restart Splunkd
