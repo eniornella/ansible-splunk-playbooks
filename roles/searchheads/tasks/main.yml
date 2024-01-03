@@ -1,9 +1,9 @@
-- name: Remove unused searchheads configuration to etc/apps
-  ansible.builtin.file:
-    src: /home/ansible/ansible-splunk-playbooks/indexers/idx_cluster_addon
-    dest: /opt/splunk/etc/apps
-    state: absent
-  when: inventory_hostname in groups['searchheads']
+# - name: Remove unused searchheads configuration to etc/apps
+#   ansible.builtin.file:
+#     src: /home/ansible/ansible-splunk-playbooks/indexers/idx_cluster_addon
+#     dest: /opt/splunk/etc/apps
+#     state: absent
+#   when: inventory_hostname in groups['searchheads']
 
 - name: Copy searchheads configuration to etc/apps
   ansible.builtin.copy:
