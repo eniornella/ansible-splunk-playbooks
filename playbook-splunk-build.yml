@@ -6,7 +6,7 @@
     - ansible.builtin.import_role:
         name: clustermanager
 
-    # - name: Run tasks/other.yaml instead of 'main'
-    #   ansible.builtin.import_role:
-    #     name: myrole
+    - name: indexer cluster configuration
+      ansible.builtin.import_role:
+        name: indexers
     
