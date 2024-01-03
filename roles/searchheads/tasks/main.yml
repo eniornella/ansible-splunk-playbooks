@@ -1,6 +1,6 @@
 - name: Copy searchheads configuration to etc/apps
   ansible.builtin.copy:
-    src: ../../../searchheads/TA_searchhead_idx_cluster
+    src: /home/ansible/ansible-splunk-playbooks/searchheads/TA_searchhead_idx_cluster
     dest: /opt/splunk/etc/apps
     owner: splunk_user
     group: splunk_user
