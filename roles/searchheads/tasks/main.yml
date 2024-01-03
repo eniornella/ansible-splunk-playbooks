@@ -1,15 +1,15 @@
-- name: Copy indexers configuration to etc/apps
+- name: Copy searchheads configuration to etc/apps
   ansible.builtin.copy:
     src: /home/ansible/ansible-splunk-playbooks/indexers/idx_cluster_addon
     dest: /opt/splunk/etc/apps
     owner: splunk_user
     group: splunk_user
     mode: "0644"
-  when: inventory_hostname in groups['indexers'][0:3]
+  when: inventory_hostname in groups['searchheads']
 
 - name: Splunk Restart
   shell: sudo systemctl restart Splunkd
   #ansible.builtin.systemd:
   #      state: restarted
   #     name: Splunkd
-  when: inventory_hostname in groups['indexers'][0:3]
+  when: inventory_hostname in groups['searchheads']
