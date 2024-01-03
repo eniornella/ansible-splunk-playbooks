@@ -1,0 +1,18 @@
+---
+- name: Indexers Configuration
+  hosts: indexers
+  become: yes
+
+  tasks:
+    - name: Copy indexers configuration to etc/apps
+      ansible.builtin.copy:
+        src: /home/ansible/ansible-splunk-playbooks/indexers/idx_cluster_addon
+        dest: /opt/splunk/etc/apps
+        owner: splunk_user
+        group: splunk_user
+        mode: "0644"
+
+    - name: Splunk Restart
+      ansible.builtin.systemd:
+        state: restarted
+        name: Splunkd

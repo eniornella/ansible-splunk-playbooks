@@ -1,0 +1,12 @@
+---
+- name: Splunk Infrastructure Build
+  hosts: all
+
+  tasks:
+    - ansible.builtin.import_role:
+        name: clustermanager
+
+    # - name: Run tasks/other.yaml instead of 'main'
+    #   ansible.builtin.import_role:
+    #     name: myrole
+    

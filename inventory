@@ -14,8 +14,11 @@ indexer0[1:3].eni.nilipay.com
 [deploymentserver]
 deploymentserver.eni.nilipay.com
 
-#[universalforwarder]
-#linuxuniversalforwarder.eni.nilipay.com
+[universalforwarder]
+linuxuniversalforwarder.eni.nilipay.com
 
-[licensemaster]
+[license-server]
 license-server.eni.nilipay.com
+
+[heavyforwarder]
+heavyforwarder.eni.nilipay.com
