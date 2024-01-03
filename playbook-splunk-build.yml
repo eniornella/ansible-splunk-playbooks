@@ -9,4 +9,10 @@
     - name: indexer cluster configuration
       ansible.builtin.import_role:
         name: indexers
+
+    - name: searchheads indexer cluster configuration
+      ansible.builtin.import_role:
+        name: searchheads
+
+
     
