@@ -8,7 +8,8 @@
   when: inventory_hostname == groups['clustermanager'][0]
 
 - name: splunk restart
-  ansible.builtin.systemd:
-    state: restarted
-    name: Splunkd
+  shell: sudo systemctl restart Splunkd
+  # ansible.builtin.systemd:
+  #   state: restarted
+  #   name: Splunkd
   when: inventory_hostname == groups['clustermanager'][0]
