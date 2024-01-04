@@ -21,6 +21,6 @@
     timeout: 300
   when: inventory_hostname in groups['searchheads']
 
-- name: searchhead02 captain
+- name: searchhead01 captain
   shell: /opt/splunk/bin/splunk bootstrap shcluster-captain -servers_list "https://searchhead01.eni.nilipay.com:8089,https://searchhead02.eni.nilipay.com:8089" -auth admin:P@ssword123
-  when: inventory_hostname == groups['searchheads'][1]
+  when: inventory_hostname == groups['searchheads'][0]
