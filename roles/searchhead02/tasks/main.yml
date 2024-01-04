@@ -14,7 +14,12 @@
   #     name: Splunkd
   when: inventory_hostname == groups['searchheads'][1]
 
+- name: Wait for Splunk to Start
+  wait_for:
+    port: 8000
+    delay: 10
+    timeout: 300
+
 - name: searchhead02 captain
   shell: /opt/splunk/bin/splunk bootstrap shcluster-captain -servers_list "https://searchhead01.eni.nilipay.com:8089,https://searchhead02.eni.nilipay.com:8089" -auth admin:P@ssword123
   when: inventory_hostname == groups['searchheads'][1]
-
