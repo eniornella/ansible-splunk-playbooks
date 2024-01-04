@@ -1,6 +1,6 @@
 - name: Copy deployer configuration to etc/apps
   ansible.builtin.copy:
-    src: /home/ansible/ansible-splunk-playbooks/seachheads_clustering/TA_searchhead_deployer_cluster
+    src: /home/ansible/ansible-splunk-playbooks/seachheads_clustering
     dest: /opt/splunk/etc/apps
     owner: splunk_user
     group: splunk_user
