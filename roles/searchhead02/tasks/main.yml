@@ -1,0 +1,15 @@
+- name: Copy searchhead02 configuration to etc/apps
+  ansible.builtin.copy:
+    src: /home/ansible/ansible-splunk-playbooks/seachheads_clustering/TA_searchhead_sh02_cluster
+    dest: /opt/splunk/etc/apps
+    owner: splunk_user
+    group: splunk_user
+    mode: "0644"
+  when: inventory_hostname == groups['searchheads'][1]
+
+- name: Splunk Restart
+  shell: sudo systemctl restart Splunkd
+  #ansible.builtin.systemd:
+  #      state: restarted
+  #     name: Splunkd
+  when: inventory_hostname == groups['searchheads'][1]

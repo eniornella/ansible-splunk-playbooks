@@ -21,3 +21,7 @@
     - name: searchheah01  cluster configuration
       ansible.builtin.import_role:
         name: searchhead01
+
+    - name: searchheah02  cluster configuration
+      ansible.builtin.import_role:
+        name: searchhead02
