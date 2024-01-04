@@ -17,3 +17,7 @@
     - name: deployer  cluster configuration
       ansible.builtin.import_role:
         name: deployer
+
+    - name: searchheah01  cluster configuration
+      ansible.builtin.import_role:
+        name: searchhead01
