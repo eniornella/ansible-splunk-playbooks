@@ -1,6 +1,6 @@
 - name: Copy searchhead02 configuration to etc/apps
   ansible.builtin.copy:
-    src: /home/ansible/ansible-splunk-playbooks/seachheads_clustering/TA_searchhead_sh02_cluster
+    src: /home/ansible/ansible-splunk-playbooks/seachheads_clustering/TA_searchhead-sh02_cluster
     dest: /opt/splunk/etc/apps
     owner: splunk_user
     group: splunk_user
