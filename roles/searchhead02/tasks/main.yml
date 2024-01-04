@@ -19,6 +19,7 @@
     port: 8000
     delay: 10
     timeout: 300
+  when: inventory_hostname in groups['searchheads']
 
 - name: searchhead02 captain
   shell: /opt/splunk/bin/splunk bootstrap shcluster-captain -servers_list "https://searchhead01.eni.nilipay.com:8089,https://searchhead02.eni.nilipay.com:8089" -auth admin:P@ssword123
