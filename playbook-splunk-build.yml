@@ -13,3 +13,7 @@
     - name: searchheads indexer cluster configuration
       ansible.builtin.import_role:
         name: searchheads
+
+    - name: deployer  cluster configuration
+      ansible.builtin.import_role:
+        name: deployer
