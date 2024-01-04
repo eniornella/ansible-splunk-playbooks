@@ -5,11 +5,11 @@
     owner: splunk_user
     group: splunk_user
     mode: "0644"
-  when: inventory_hostname in groups['searchheads']
+  when: inventory_hostname == groups['searchheads'][01]
 
 - name: Splunk Restart
   shell: sudo systemctl restart Splunkd
   #ansible.builtin.systemd:
   #      state: restarted
   #     name: Splunkd
-  when: inventory_hostname in groups['searchheads']
+  when: inventory_hostname == groups['searchheads'][01]
