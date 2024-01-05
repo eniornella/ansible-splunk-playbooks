@@ -22,5 +22,5 @@
   when: inventory_hostname in groups['searchheads']
 
 - name: searchhead01 captain
-  shell: /opt/splunk/bin/splunk bootstrap shcluster-captain -servers_list "https://searchhead01.eni.nilipay.com:8089,https://searchhead02.eni.nilipay.com:8089" -auth admin:P@ssword123
+  shell: /opt/splunk/bin/splunk bootstrap shcluster-captain -servers_list "18.221.224.144:8089,3.144.43.245:8089" -auth admin:P@ssword123
   when: inventory_hostname == groups['searchheads'][0]
